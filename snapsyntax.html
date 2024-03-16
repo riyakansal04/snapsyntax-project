@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snap syntax</title>
+<style>
+  body {
+    background-color: #ACE4E3;
+    font-family: 'Figtree', 'JetBrains Mono', 'Astride Grotesk';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0;
+    position: relative;
+    flex-direction: column; 
+  }
+  h1 {
+    color: black; 
+    text-align: center;
+    z-index: 1;
+    font-size: 3em; 
+    margin: 0; 
+  }
+  h2 {
+    color: black;
+    text-align: right;
+    z-index: 1;
+    font-size: 3em;
+    margin: 0;
+    margin-left: 400px; /* Adjust the margin-right */
+  }
+  .corner-text {
+    position: fixed;
+    font-size: 0.8em;
+  }
+  .top-left { top: 10px; left: 10px; }
+  .top-right { top: 10px; right: 10px; }
+  .bottom-left { bottom: 10px; left: 10px; }
+  .bottom-right { bottom: 10px; right: 10px; }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree&family=JetBrains+Mono&family=Astride+Grotesk&display=swap">
+</head>
+<body>
+  <h4>19th SEPTEMBER 2023</h4>
+  <h1>World Suicide</h1>
+  <h2>Prevention</h2>
+
+<script>
+  var shown = false;
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var corners = document.querySelectorAll('.corner-text');
+    
+    if (!shown && scrollTop > 0) {
+      corners.forEach(function(corner) {
+        corner.style.display = 'block';
+      });
+      shown = true;
+    }
+    
+    corners.forEach(function(corner) {
+      var position = corner.classList.contains('top') ? scrollTop + 100 : scrollTop + window.innerHeight - 30;
+      if (corner.classList.contains('left')) {
+        corner.style.left = '10px';
+      } else {
+        corner.style.right = '10px';
+      }
+      corner.style.top = position + 'px';
+    });
+  });
+</script>
+
+<div class="corner-text top-left">How many do we lose every day?</div>
+<div class="corner-text top-right">How many we lose every week?</div>
+<div class="corner-text bottom-left">How many we lose every month?</div>
+<div class="corner-text bottom-right">How many we lose every year?</div>
+
+</body>
+</html>
+
+
+
+    
+    
+    
+
+
+    
+    
